@@ -5,23 +5,47 @@
 <html>
 <head runat="server">
     <title></title>
+     <asp:ContentPlaceHolder ID="head" runat="server">
+                </asp:ContentPlaceHolder>
     
     <link href="../Content/MainMasterPageStyleSheet.css" rel="stylesheet" />
 </head>
 <body>
     <form id="MainMasterPage" runat="server">
-
-        
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-            </asp:ContentPlaceHolder>
+      
+                    
+            <div id ="Header" class =" header"><font size="10" color="orange"> Pioneer Technologies Inc</font><br />
+                <font size="5" color="orange">Efficiency and Innovation</font></div>
+           
+           
             
-            <div id ="Header" class =" header"> </div>
-            <div id ="Navigation" class="navigation"></div>
-            <div id ="Footer" class =" footer"></div>
+            <div id ="Navigation" class="navigation">
+                <asp:Menu ID="Menu1" runat="server" OnMenuItemClick="Menu1_MenuItemClick">
+                    <Items>
+                        <asp:MenuItem NavigateUrl="~/UI/Home.aspx" Text="Home" Value="Home"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/UI/EmployeeDetail.aspx" Text="Employee Details" Value="Employee Details"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/UI/CompanyDetails.aspx" Text="Company Details" Value="Company Details"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/UI/ProjectDetails.aspx" Text="Project Details" Value="Project Details"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/UI/TechnicalDetails.aspx" Text="Technical Details" Value="Technical Details"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/UI/EducationDetails.aspx" Text="Education Details" Value="Education Details"></asp:MenuItem>
+                    </Items>
+                </asp:Menu>
+               
+              </div>
+           
             <div id ="Content" class = "content">
-                <asp:ContentPlaceHolder ID="head" runat="server">
-                </asp:ContentPlaceHolder>
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                     
+                  </asp:ContentPlaceHolder>  
+
+
             </div>
+              <div id ="Footer" class =" footer">
+                  FOOTER TEST <br />
+                  <br /><br /><br />Footer
+              </div>
+        
+       
            
        
       
