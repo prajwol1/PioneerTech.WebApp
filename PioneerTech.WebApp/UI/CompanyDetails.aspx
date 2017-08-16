@@ -58,8 +58,7 @@
           <tr id="EmployeeId">
               <td class="auto-style2">Employee Id</td>
               <td class="auto-style1">
-                  <asp:TextBox ID="EmployeeIdTextBox" runat="server"></asp:TextBox>
-                  <asp:DropDownList ID="EmployeeIdCompanyDropDownList" runat="server" DataSourceID="EmployeeSqlDataSource" DataTextField="EmployeeID" DataValueField="EmployeeID">
+                  <asp:DropDownList ID="EmployeeIdCompanyDropDownList" runat="server" DataSourceID="EmployeeSqlDataSource" DataTextField="EmployeeID" DataValueField="EmployeeID" Height="16px" Width="129px">
                   </asp:DropDownList>
               </td>
           </tr>
@@ -73,8 +72,8 @@
                   <br />
                   Employee Id<asp:DropDownList ID="EditCompanyEmployeeIdDropDownList" runat="server" AutoPostBack="True" DataSourceID="EmployeeSqlDataSource" DataTextField="EmployeeID" DataValueField="EmployeeID" Height="16px" OnInit="DropDownList2_SelectedIndexChanged" OnSelectedIndexChanged="EditCompanyEmployeeIdDropDownList_SelectedIndexChanged" Width="167px">
                   </asp:DropDownList>
-                  <asp:SqlDataSource ID="EmployeeSqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:Pioneer_Employee_Database1ConnectionString %>" SelectCommand="SELECT [EmployeeID] FROM [CompanyDetail]"></asp:SqlDataSource>
-                  Company Id<asp:DropDownList ID="DropDownList2" runat="server" AutoPostBack="True" DataSourceID="SqlDataSource1" DataTextField="CompanyID" DataValueField="CompanyID" Height="17px" OnSelectedIndexChanged="DropDownList2_SelectedIndexChanged" Width="161px">
+                  <asp:SqlDataSource ID="EmployeeSqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:Pioneer_Employee_Database1ConnectionString %>" OnSelecting="EmployeeSqlDataSource_Selecting" SelectCommand="SELECT [EmployeeID] FROM [EmployeeDetail]"></asp:SqlDataSource>
+                  Company Id<asp:DropDownList ID="DropDownList2" runat="server" DataSourceID="SqlDataSource1" DataTextField="CompanyID" DataValueField="CompanyID" Height="17px" OnSelectedIndexChanged="DropDownList2_SelectedIndexChanged" Width="161px">
                   </asp:DropDownList>
                   <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:Pioneer_Employee_Database1ConnectionString %>" SelectCommand="SELECT [CompanyID] FROM [CompanyDetail] WHERE ([EmployeeID] = @EmployeeID)">
                       <SelectParameters>

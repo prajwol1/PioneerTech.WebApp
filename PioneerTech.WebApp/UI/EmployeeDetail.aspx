@@ -98,7 +98,7 @@
              </td>
             <td class="auto-style11" >
                 <asp:Button ID="EditButton" runat="server" Text="Edit" Height="20px" Width="84px" OnClick="EditButton_Click" />
-                <asp:DropDownList ID="EditEmployeeDropDownList" runat="server" DataSourceID="EmployeeSqlDataSource" DataTextField="EmployeeID" DataValueField="EmployeeID" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged" Width="181px">
+                <asp:DropDownList ID="EditEmployeeDropDownList" runat="server" DataSourceID="EmployeeSqlDataSource" DataTextField="EmployeeID" DataValueField="EmployeeID" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged" Width="181px" AutoPostBack="True">
                 </asp:DropDownList>
                 <asp:SqlDataSource ID="EmployeeSqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:Pioneer_Employee_Database1ConnectionString %>" SelectCommand="SELECT [EmployeeID], [FirstName] FROM [EmployeeDetail]"></asp:SqlDataSource>
              </td>

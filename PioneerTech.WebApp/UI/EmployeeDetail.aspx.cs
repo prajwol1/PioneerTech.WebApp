@@ -66,6 +66,21 @@ namespace PioneerTech.WebApp.UI
 
         protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            EmployeeModel model = new EmployeeModel();
+            model = GetEmployeeDetails(Convert.ToInt32(EditEmployeeDropDownList.Text));
+
+            FirstNameTextBox.Text = model.FirstName;
+            LastNameTextBox.Text = model.LastName;
+            EmailIdTextBox.Text = model.EmailId;
+            MobileNumberTextBox.Text = Convert.ToString(model.MobileNumber);
+            AlternateMobileNumberTextBox.Text = Convert.ToString(model.AlternateMobileNumber);
+            Address1TextBox.Text = model.Address1;
+            Address2TextBox.Text = model.Address2;
+            HomeCountryTextBox.Text = model.HomeCountry;
+            CurrentCountryTextBox.Text = model.CurrentCountry;
+            ZipCodeTextBox.Text = Convert.ToString(model.ZipCode);
+
+
 
         }
 
@@ -100,6 +115,39 @@ namespace PioneerTech.WebApp.UI
             int result = cmd.ExecuteNonQuery();
             ClientScript.RegisterStartupScript(this.GetType(), "Operation was", "alert(' Employee Details SUCCESSFULLY Edited');", true);
 
+        }
+        public EmployeeModel GetEmployeeDetails(int employeeid)
+        {
+            EmployeeModel empdmodel = new EmployeeModel();
+           
+                string connectionstring = "Data Source=PRAJWOLPC;Initial Catalog=Pioneer_Employee_Database1;" +
+                       " Integrated Security=SSPI";
+                SqlConnection mysqlconnection = new SqlConnection(connectionstring);
+                mysqlconnection.Open();
+                string sqldetails = ("Select * FROM EmployeeDetail WHERE EmployeeID=" + employeeid);
+                SqlCommand command;
+                command = new SqlCommand(sqldetails, mysqlconnection);
+                SqlDataReader employeedatareader = command.ExecuteReader();
+            
+            while (employeedatareader.Read())
+                {
+                //empdmodel.EmployeeID = employeedatareader.GetInt32(employeedatareader.GetOrdinal("EmployeeID"));
+                   
+                     empdmodel.FirstName = employeedatareader.GetString(employeedatareader.GetOrdinal("FirstName"));
+                    empdmodel.LastName = employeedatareader.GetString(employeedatareader.GetOrdinal("LastName"));
+                    empdmodel.EmailId = employeedatareader.GetString(employeedatareader.GetOrdinal("Email"));
+                    empdmodel.MobileNumber = employeedatareader.GetInt64(employeedatareader.GetOrdinal("ContactNumber"));
+                    empdmodel.AlternateMobileNumber = employeedatareader.GetInt64(employeedatareader.GetOrdinal("AlternateContactNumber"));
+                    empdmodel.Address1 = employeedatareader.GetString(employeedatareader.GetOrdinal("Address"));
+                    empdmodel.Address2 = employeedatareader.GetString(employeedatareader.GetOrdinal("AlternateAddress"));
+                    empdmodel.CurrentCountry = employeedatareader.GetString(employeedatareader.GetOrdinal("CurrentCountry"));
+                    empdmodel.HomeCountry = employeedatareader.GetString(employeedatareader.GetOrdinal("HomeCountry"));
+                    empdmodel.ZipCode = employeedatareader.GetInt32(employeedatareader.GetOrdinal("ZipCode"));
+                }
+                
+
+          
+            return empdmodel;
         }
     }
 }

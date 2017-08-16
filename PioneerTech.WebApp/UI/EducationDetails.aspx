@@ -14,30 +14,41 @@
         <tr>
             <td class="auto-style1">Course Type</td>
             <td>
-                <asp:TextBox ID="TextBox1" runat="server" Width="185px"></asp:TextBox>
+                <asp:TextBox ID="CourseTypeTextBox" runat="server" Width="185px"></asp:TextBox>
             </td>
         </tr>
         <tr>
             <td class="auto-style1">Course Year</td>
             <td>
-                <asp:TextBox ID="TextBox2" runat="server" Width="185px"></asp:TextBox>
+                <asp:TextBox ID="CourseYearTextBox" runat="server" Width="185px"></asp:TextBox>
             </td>
         </tr>
         <tr>
             <td class="auto-style1">Course Specialization</td>
             <td>
-                <asp:TextBox ID="TextBox3" runat="server" Width="182px"></asp:TextBox>
+                <asp:TextBox ID="CourseSpecialiazationTextBox" runat="server" Width="182px"></asp:TextBox>
+            </td>
+        </tr>
+              <tr>
+            <td class="auto-style1">Employee Id</td>
+            <td>
+                <asp:DropDownList ID="EmployeeIdDropDownList" runat="server" DataSourceID="SqlDataSource1" DataTextField="EmployeeID" DataValueField="EmployeeID" Height="26px" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged" Width="194px">
+                </asp:DropDownList>
+                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:Pioneer_Employee_Database1ConnectionString %>" SelectCommand="SELECT [EmployeeID] FROM [EmployeeDetail]"></asp:SqlDataSource>
             </td>
         </tr>
         <tr>
             <td>
-                <asp:Button ID="SaveButton" runat="server" Text="Save" />
+                <asp:Button ID="SaveButton" runat="server" Text="Save" OnClick="SaveButton_Click" />
             </td>
             <td>
-                <asp:Button ID="EditButton" runat="server" Text="Edit" Width="58px" />
+                <asp:Button ID="EditButton" runat="server" Text="Edit" Width="58px" OnClick="EditButton_Click" />
+                <asp:DropDownList ID="EditEmployeeIdInEducationDropDownList" runat="server" AutoPostBack="True" DataSourceID="SqlDataSource2" DataTextField="EmployeeID" DataValueField="EmployeeID" Height="17px" OnSelectedIndexChanged="EditEmployeeIdInEducationDropDownList_SelectedIndexChanged" Width="136px">
+                </asp:DropDownList>
+                <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:Pioneer_Employee_Database1ConnectionString %>" SelectCommand="SELECT [EmployeeID] FROM [EducationDetail]"></asp:SqlDataSource>
             </td>
             <td>
-                <asp:Button ID="ClearButton" runat="server" Text="Clear" />
+                <asp:Button ID="ClearButton" runat="server" Text="Clear" OnClick="ClearButton_Click" />
             </td>
         </tr>
 
