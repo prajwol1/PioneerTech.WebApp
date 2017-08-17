@@ -14,7 +14,7 @@ namespace PioneerTech.WebApp.UI
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
         }
 
         protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
@@ -108,6 +108,14 @@ namespace PioneerTech.WebApp.UI
                 ClientScript.RegisterStartupScript(this.GetType(), "Operation was", "alert(' Project Details SUCCESSFULLY Edited');", true);
             else
                 ClientScript.RegisterStartupScript(this.GetType(), "Operation was", "alert(' Save Unsuccesfull.Please Contact Administrator');", true);
+        }
+
+        protected void ClearButton_Click(object sender, EventArgs e)
+        {
+            ProjectNameTextBox.Text = "";
+            ClienNameTextBox.Text = "";
+            LocationTextBox.Text = "";
+            RolesTextBox.Text = "";
         }
     }
 }

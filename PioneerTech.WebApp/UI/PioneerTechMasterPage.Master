@@ -20,6 +20,7 @@
            
             
             <div id ="Navigation" class="navigation">
+                
                 <asp:Menu ID="Menu1" runat="server" OnMenuItemClick="Menu1_MenuItemClick">
                     <Items>
                         <asp:MenuItem NavigateUrl="~/UI/Home.aspx" Text="Home" Value="Home"></asp:MenuItem>
@@ -40,9 +41,19 @@
 
 
             </div>
+
+
               <div id ="Footer" class =" footer">
-                  FOOTER TEST <br />
-                  <br /><br /><br />Footer
+                   <br />
+                    Corporate Headquarters <br />
+
+                    1111 Corporate Drive, Suite ###  <br />
+                    Irving, Texas 00000 <br /> 
+                    Phone:972-111-**** <br />
+                    Fax: 972-111-**** <br />
+
+                    For general information, please email us at #$%@pioneertechnic.com
+                  <br /><br />Copyright (c) All rights reserved.
               </div>
         
        

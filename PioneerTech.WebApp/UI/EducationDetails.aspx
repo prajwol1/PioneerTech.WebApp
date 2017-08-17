@@ -15,18 +15,21 @@
             <td class="auto-style1">Course Type</td>
             <td>
                 <asp:TextBox ID="CourseTypeTextBox" runat="server" Width="185px"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="CourseTypeTextBox" ErrorMessage="Please Enter Course Type"></asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>
             <td class="auto-style1">Course Year</td>
             <td>
                 <asp:TextBox ID="CourseYearTextBox" runat="server" Width="185px"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="CourseYearTextBox" ErrorMessage="Please Enter Course Year"></asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>
             <td class="auto-style1">Course Specialization</td>
             <td>
                 <asp:TextBox ID="CourseSpecialiazationTextBox" runat="server" Width="182px"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="CourseSpecialiazationTextBox" ErrorMessage="Please Enter Course Specialization"></asp:RequiredFieldValidator>
             </td>
         </tr>
               <tr>

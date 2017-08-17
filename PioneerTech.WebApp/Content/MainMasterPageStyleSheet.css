@@ -6,12 +6,11 @@
     position: fixed
 }
 
-body {
-}
 
 
 
 .navigation {
+    
     height: 60%;
     width: 20%;
     background-color: orange;
@@ -22,7 +21,7 @@ body {
 .content {
     top: 20%;
     height: 60%;
-    width: 75%;
+    width: 85%;
     left: 20%;
     position: fixed;
     background-color: lightblue;

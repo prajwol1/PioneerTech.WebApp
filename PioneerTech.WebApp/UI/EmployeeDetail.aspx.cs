@@ -18,7 +18,7 @@ namespace PioneerTech.WebApp.UI
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
         }
 
         protected void SaveButton_Click(object sender, EventArgs e)
@@ -52,9 +52,10 @@ namespace PioneerTech.WebApp.UI
 
         protected void ClearButton_Click(object sender, EventArgs e)
         {
-            FirstNameTextBox.Text = "";
+            //FirstNameTextBox.
+            FirstNameTextBox.Text = String.Empty;
             LastNameTextBox.Text = "";
-            EmailIdTextBox.Text = "";
+            EmailIdTextBox.Text = String.Empty;
             MobileNumberTextBox.Text = "";
             AlternateMobileNumberTextBox.Text = "";
             Address1TextBox.Text = "";

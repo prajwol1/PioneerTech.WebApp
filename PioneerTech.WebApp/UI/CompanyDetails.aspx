@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style type="text/css">
         .auto-style1 {
-            width: 276px;
+            width: 408px;
         }
         .auto-style2 {
             width: 179px;
@@ -12,18 +12,30 @@
             height: 177px;
         }
         .auto-style4 {
-            width: 276px;
+            width: 408px;
             height: 177px;
         }
         .auto-style5 {
             height: 177px;
+        }
+        .auto-style6 {
+            width: 179px;
+            height: 20px;
+        }
+        .auto-style7 {
+            width: 408px;
+            height: 20px;
+        }
+        .auto-style8 {
+            width: 100%;
+            height: 383px;
         }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
 
-      <table id="CompanyDetail" style="width: 100%; height: 191px;">
+      <table id="CompanyDetail" class="auto-style8">
         <tr>
             <td class="auto-style2">Company Details</td>
          </tr>
@@ -32,6 +44,7 @@
             <td class="auto-style2">Employer Name</td>
             <td class="auto-style1">
                 <asp:TextBox ID="EmployerNameTextBox" runat="server"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="EmployerNameTextBox" ErrorMessage="Please Enter Employer Name"></asp:RequiredFieldValidator>
             </td>
          </tr>
          
@@ -39,6 +52,7 @@
               <td class="auto-style2">Contact Number</td>
               <td class="auto-style1">
                   <asp:TextBox ID="EmployerContactNumberTextBox" runat="server"></asp:TextBox>
+                  <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="EmployerContactNumberTextBox" ErrorMessage="Please Enter Contact Number"></asp:RequiredFieldValidator>
               </td>
           </tr>
 
@@ -46,6 +60,7 @@
               <td class="auto-style2">Location</td>
               <td class="auto-style1">
                   <asp:TextBox ID="EmployerLocationTextBox" runat="server"></asp:TextBox>
+                  <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="EmployerLocationTextBox" ErrorMessage="Please Enter Location"></asp:RequiredFieldValidator>
               </td>
           </tr>
 
@@ -56,8 +71,8 @@
               </td>
           </tr>
           <tr id="EmployeeId">
-              <td class="auto-style2">Employee Id</td>
-              <td class="auto-style1">
+              <td class="auto-style6">Employee Id</td>
+              <td class="auto-style7">
                   <asp:DropDownList ID="EmployeeIdCompanyDropDownList" runat="server" DataSourceID="EmployeeSqlDataSource" DataTextField="EmployeeID" DataValueField="EmployeeID" Height="16px" Width="129px">
                   </asp:DropDownList>
               </td>
@@ -72,6 +87,7 @@
                   <br />
                   Employee Id<asp:DropDownList ID="EditCompanyEmployeeIdDropDownList" runat="server" AutoPostBack="True" DataSourceID="EmployeeSqlDataSource" DataTextField="EmployeeID" DataValueField="EmployeeID" Height="16px" OnInit="DropDownList2_SelectedIndexChanged" OnSelectedIndexChanged="EditCompanyEmployeeIdDropDownList_SelectedIndexChanged" Width="167px">
                   </asp:DropDownList>
+                  <br />
                   <asp:SqlDataSource ID="EmployeeSqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:Pioneer_Employee_Database1ConnectionString %>" OnSelecting="EmployeeSqlDataSource_Selecting" SelectCommand="SELECT [EmployeeID] FROM [EmployeeDetail]"></asp:SqlDataSource>
                   Company Id<asp:DropDownList ID="DropDownList2" runat="server" DataSourceID="SqlDataSource1" DataTextField="CompanyID" DataValueField="CompanyID" Height="17px" OnSelectedIndexChanged="DropDownList2_SelectedIndexChanged" Width="161px">
                   </asp:DropDownList>
@@ -82,6 +98,7 @@
                   </asp:SqlDataSource>
               </td>
               <td class="auto-style5">
+                  &nbsp;&nbsp;&nbsp;
                   <asp:Button ID="CompanyClearButton" runat="server" Text="Clear" Height="28px" OnClick="CompanyClearButton_Click" Width="67px" />
               </td>
           </tr>

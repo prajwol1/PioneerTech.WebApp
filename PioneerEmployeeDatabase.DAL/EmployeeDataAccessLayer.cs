@@ -69,8 +69,10 @@ namespace PioneerEmployeeDatabase.DAL
             SqlConnection mysqlconnection = new SqlConnection();
             mysqlconnection.ConnectionString = "Data Source = PRAJWOLPC;database = Pioneer_Employee_Database1;Integrated security = SSPI";
 
-            SqlCommand cmd = new SqlCommand("INSERT INTO TechnicalDetail VALUES('" + model.UI + "','" + model.ProgrammingLanguage + "','" + model.DatabaseName + "'," + model.EmployeeId + ")", mysqlconnection);
-            
+            SqlCommand cmd = new SqlCommand("EXEC [dbo].[saveTechnicalDetails] '" + model.UI + "','" + model.ProgrammingLanguage + "','" + model.DatabaseName + "'," + model.EmployeeId + " GO", mysqlconnection);
+           // SqlCommand cmd = new SqlCommand("INSERT INTO TechnicalDetail VALUES('" + model.UI + "','" + model.ProgrammingLanguage + "','" + model.DatabaseName + "'," + model.EmployeeId + ")", mysqlconnection);
+
+           
             mysqlconnection.Open();
             result = cmd.ExecuteNonQuery();
             return result;

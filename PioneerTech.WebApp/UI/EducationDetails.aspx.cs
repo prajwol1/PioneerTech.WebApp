@@ -14,7 +14,7 @@ namespace PioneerTech.WebApp.UI
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
         }
 
         protected void TextBox4_TextChanged(object sender, EventArgs e)
@@ -116,7 +116,7 @@ namespace PioneerTech.WebApp.UI
             CourseSpecialiazationTextBox.Text = "";
             CourseTypeTextBox.Text = "";
             CourseYearTextBox.Text = "";
-            EmployeeIdDropDownList.Text = "";
+            //EmployeeIdDropDownList.Text = "";
         }
     }
 }
