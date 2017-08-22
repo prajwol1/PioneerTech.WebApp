@@ -103,6 +103,15 @@ namespace PioneerTech.WebApp.UI {
         protected global::System.Web.UI.WebControls.Button EditButton;
         
         /// <summary>
+        /// ClearButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ClearButton;
+        
+        /// <summary>
         /// EditEmployeeIdInEducationDropDownList control.
         /// </summary>
         /// <remarks>
@@ -119,14 +128,5 @@ namespace PioneerTech.WebApp.UI {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource2;
-        
-        /// <summary>
-        /// ClearButton control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ClearButton;
     }
 }

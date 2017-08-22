@@ -4,11 +4,13 @@
         .auto-style1 {
             width: 169px;
         }
+        .auto-style2 {
+            height: 23px;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    This is Education Detail
 
     <table style="width: 100%;">
         <tr>
@@ -40,18 +42,27 @@
                 <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:Pioneer_Employee_Database1ConnectionString %>" SelectCommand="SELECT [EmployeeID] FROM [EmployeeDetail]"></asp:SqlDataSource>
             </td>
         </tr>
+
         <tr>
-            <td>
+            <td>          
                 <asp:Button ID="SaveButton" runat="server" Text="Save" OnClick="SaveButton_Click" />
             </td>
-            <td>
+            <td>  
                 <asp:Button ID="EditButton" runat="server" Text="Edit" Width="58px" OnClick="EditButton_Click" />
+            </td>
+            <td> 
+                <asp:Button ID="ClearButton" runat="server" Text="Clear" OnClick="ClearButton_Click" />
+            </td>
+        </tr>
+        <tr>
+            <td class="auto-style2">
+            </td>
+            <td class="auto-style2">
                 <asp:DropDownList ID="EditEmployeeIdInEducationDropDownList" runat="server" AutoPostBack="True" DataSourceID="SqlDataSource2" DataTextField="EmployeeID" DataValueField="EmployeeID" Height="17px" OnSelectedIndexChanged="EditEmployeeIdInEducationDropDownList_SelectedIndexChanged" Width="136px">
                 </asp:DropDownList>
                 <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:Pioneer_Employee_Database1ConnectionString %>" SelectCommand="SELECT [EmployeeID] FROM [EducationDetail]"></asp:SqlDataSource>
             </td>
-            <td>
-                <asp:Button ID="ClearButton" runat="server" Text="Clear" OnClick="ClearButton_Click" />
+            <td class="auto-style2">
             </td>
         </tr>
 

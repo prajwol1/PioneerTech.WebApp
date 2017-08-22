@@ -79,9 +79,10 @@ namespace PioneerTech.WebApp.UI
 
             int EditEmployeeId = Convert.ToInt32(EditEmployeeIdInEducationDropDownList.Text);
 
-            SqlConnection mysqlconnection = new SqlConnection();
-            mysqlconnection.ConnectionString = "Data Source = PRAJWOLPC;database = Pioneer_Employee_Database1;Integrated security = SSPI";
-
+            SqlConnection mysqlconnection = new SqlConnection()
+            {
+                ConnectionString = "Data Source = PRAJWOLPC;database = Pioneer_Employee_Database1;Integrated security = SSPI"
+            };
             SqlCommand cmd = new SqlCommand("UPDATE [EducationDetail] SET[CourseType] = " +
                             "'" + model.CourseType + "',[YearOfPass] = " + Convert.ToInt32(model.YearOfPass) + ",[CourseSpecilization] = '" + model.CourseSpecialization + "'WHERE EmployeeID = " + EditEmployeeId, mysqlconnection);
             mysqlconnection.Open();

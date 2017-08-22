@@ -1,9 +1,13 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/UI/PioneerTechMasterPage.Master" AutoEventWireup="true" CodeBehind="ProjectDetails.aspx.cs" Inherits="PioneerTech.WebApp.UI.ProjectDetails" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <style type="text/css">
+        .auto-style1 {
+            width: 180px;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    This Is Project Detail.
-
+  
      <table style="width: 100%;">
         <tr>
             <td class="auto-style1">Project Name</td>
@@ -42,7 +46,7 @@
             </td>
         </tr>
         <tr>
-            <td>
+            <td class="auto-style1">
                 <asp:Button ID="SaveButton" runat="server" Text="Save" OnClick="SaveButton_Click" />
             </td>
             <td>

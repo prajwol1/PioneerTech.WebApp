@@ -76,6 +76,8 @@
     <Content Include="UI\EducationDetails.aspx" />
     <Content Include="UI\EmployeeDetail.aspx" />
     <Content Include="UI\PioneerTechMasterPage.Master" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile1.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

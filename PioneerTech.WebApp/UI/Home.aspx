@@ -4,7 +4,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
    
-  <font color ="DarkOrange" size =" 8"> Welcome to Pioneer Technologies! </font><br /><br />
+  
     
     Pioneer Technologies provides consulting and IT services for delivering independent, practical, value-priced advice and services to our chosen market sectors.
 
